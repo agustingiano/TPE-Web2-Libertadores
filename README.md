@@ -2,7 +2,7 @@
 
 ## Integrantes:
   *Agustin Giano agustingiano@gmail.com
-  *Vicky Dobler doblervictoria3@gmail.com
+  *Victoria Dobler Colo doblervictoria3@gmail.com
 
 ## Tematica TPE
     *Copa Libertadores: Gestión de Equipos, Jugadores y resultados.
