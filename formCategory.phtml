@@ -1,0 +1,24 @@
+<?php require './app/views/layout/header.phtml'; ?>
+
+<h3><?= $category ? 'Editar categoría' : 'Agregar categoría' ?></h3>
+
+<form method="POST">
+    <label>Nombre</label>
+    <input 
+        type="text" 
+        name="nombre" 
+        value="<?= $category ? htmlspecialchars($category->nombre) : '' ?>"
+        required
+    >
+
+    <label>Imagen URL</label>
+    <input 
+        type="text" 
+        name="imagen_url" 
+        value="<?= $category ? htmlspecialchars($category->imagen_url) : '' ?>"
+    >
+
+    <button type="submit">Guardar</button>
+</form>
+
+<?php require './app/views/layout/footer.phtml'; ?>

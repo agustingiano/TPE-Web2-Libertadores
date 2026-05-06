@@ -1,0 +1,447 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #e6edf3;
+
+  /* verde base */
+  background: linear-gradient(
+    180deg,
+    #0a2f1f 0%,
+    #0f3d2a 50%,
+    #0a2f1f 100%
+  );
+
+  position: relative;
+}
+
+/* franjas de pasto */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 60px,
+    transparent 60px,
+    transparent 120px
+  );
+
+  pointer-events: none;
+}
+
+/* círculo central cancha */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* CONTENEDOR */
+.container {
+  width: 900px;
+  margin: auto;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logo {
+  font-size: 34px;
+  font-weight: 800;
+  color: #fefefe;
+}
+
+.pelota {
+  width: 24px;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+
+.subtitulo {
+  color: #ffd700;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin: 25px 0;
+}
+
+.nav a {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: #00ffae;
+}
+
+/* CAMPEONES MÁS IMPORTANTES */
+.campeones {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.campeones h3 {
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+/* CONTENEDOR */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* CARD GRANDE */
+.card {
+  background: linear-gradient(145deg, #0d2f1f, #0a2419);
+  border: 1px solid #1f4d3a;
+  padding: 20px;
+  border-radius: 12px;
+  width: 170px;
+  transition: 0.3s;
+  position: relative;
+}
+
+/* EFECTO HOVER */
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0,255,174,0.3);
+  border-color: #00ffae;
+}
+
+/* AÑO */
+.anio {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ESCUDO MÁS GRANDE */
+.card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 10px auto;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(0,255,174,0.6));
+}
+
+/* NOMBRE */
+.equipo {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* COPAS */
+.copas {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+/* MAIN */
+.main {
+  display: flex;
+  gap: 20px;
+}
+
+/* ambas mitades iguales */
+.grupos,
+.fixture {
+  width: 50%;
+}
+.grupos {
+  background: #11161c;
+  border: 1px solid #30363d;
+  padding: 15px;
+  border-radius: 10px;
+}
+.grupos h3 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.grupos ul {
+  list-style: none;
+}
+
+.grupos li {
+  padding: 6px 0;
+  border-bottom: 1px solid #30363d;
+  font-size: 13px;
+}
+
+
+/* FIXTURE */
+.fixture {
+  background: #11161c;
+  border: 1px solid #30363d;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* HEADER FIXTURE */
+.fixture-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #11161c;
+  border: 1px solid #30363d;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.fixture-header h3 {
+  font-size: 14px;
+}
+
+.fixture-header p {
+  font-size: 12px;
+  color: #8b949e;
+}
+
+.arrow {
+  cursor: pointer;
+}
+
+/* FECHA */
+.fecha {
+  background: #161b22;
+  padding: 6px;
+  font-size: 13px;
+  margin: 10px 0 5px;
+  border-radius: 4px;
+  text-align: center;
+  color: #00ffae;
+}
+
+/* PARTIDOS */
+.partido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #11161c;
+  border: 1px solid #30363d;
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.partido:hover {
+  background: #162029;
+}
+
+/* EQUIPOS */
+.team {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 40%;
+}
+
+.team img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.team span {
+  font-size: 13px;
+}
+
+.team small {
+  color: #8b949e;
+  font-size: 11px;
+}
+
+/* RESULTADO */
+.resultado {
+  font-weight: bold;
+  width: 20%;
+  text-align: center;
+}
+.team img,
+.card img {
+  background: transparent;
+  mix-blend-mode: lighten;
+  filter: brightness(1.2) contrast(1.2);
+  
+}
+.tabla-grupo {
+  width: 100%;
+}
+
+.tabla-grupo h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+}
+
+.grupo-card {
+  background: #082f20;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.grupo-card h3 {
+  padding: 12px 18px;
+  font-size: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.35);
+}
+
+.grupo-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.grupo-card th,
+.grupo-card td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+
+.grupo-card th {
+  color: #e6edf3;
+  font-weight: bold;
+}
+
+.grupo-card th:nth-child(2),
+.grupo-card td:nth-child(2) {
+  text-align: left;
+}
+
+.equipo-tabla {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.equipo-tabla img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.libertadores td:first-child {
+  background: #0ea5e9;
+  font-weight: bold;
+}
+
+.sudamericana td:first-child {
+  background: #a855f7;
+  font-weight: bold;
+}
+
+.v,
+.e,
+.d {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin: 0 2px;
+  border-radius: 4px;
+  color: #06141d;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.v {
+  background: #79c267;
+}
+
+.e {
+  background: #facc15;
+}
+
+.d {
+  background: #ff4b4b;
+}
+
+.referencias {
+  padding: 10px 14px;
+}
+
+.referencias p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.azul {
+  background: #0ea5e9;
+}
+
+.violeta {
+  background: #a855f7;
+}
+
+
+.team img,
+.equipo-tabla img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+
+  background: transparent;
+
+  /* CLAVE */
+  mix-blend-mode: screen;
+
+  /* mejora contraste */
+  filter: brightness(1.2) contrast(1.2);
+}
+.libertadores:first-child td:first-child {
+  background: #00c2ff;
+}

@@ -1,0 +1,20 @@
+<?php require './app/views/layout/header.phtml'; ?>
+
+<h3>Equipos de <?= htmlspecialchars($category->nombre) ?></h3>
+
+<div class="tabla">
+    <?php foreach ($teams as $team): ?>
+        <div class="partido">
+            <div class="team">
+                <span><?= htmlspecialchars($team->nombre) ?></span>
+                <small>Categoría: <?= htmlspecialchars($team->categoria) ?></small>
+            </div>
+
+            <div class="resultado">
+                🏆 <?= $team->copas_libertadores ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<?php require './app/views/layout/footer.phtml'; ?>

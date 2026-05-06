@@ -1,0 +1,21 @@
+<?php require './app/views/layout/header.phtml'; ?>
+
+<h3>Listado de categorías</h3>
+
+<div class="cards">
+    <?php foreach ($categories as $category): ?>
+        <div class="card">
+            <?php if (!empty($category->imagen_url)): ?>
+                <img src="<?= htmlspecialchars($category->imagen_url) ?>" alt="<?= htmlspecialchars($category->nombre) ?>">
+            <?php endif; ?>
+
+            <span><?= htmlspecialchars($category->nombre) ?></span>
+
+            <a href="index.php?action=categoria&id=<?= $category->id_categoria ?>">
+                Ver equipos
+            </a>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<?php require './app/views/layout/footer.phtml'; ?>

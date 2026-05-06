@@ -1,0 +1,27 @@
+<?php require './app/views/layout/header.phtml'; ?>
+
+<h3>Administrar categorías</h3>
+
+<a href="index.php?action=admin/categorias/agregar">Agregar categoría</a>
+
+<div class="tabla">
+    <?php foreach ($categories as $category): ?>
+        <div class="partido">
+            <div class="team">
+                <?php if (!empty($category->imagen_url)): ?>
+                    <img src="<?= htmlspecialchars($category->imagen_url) ?>" alt="<?= htmlspecialchars($category->nombre) ?>">
+                <?php endif; ?>
+
+                <span><?= htmlspecialchars($category->nombre) ?></span>
+            </div>
+
+            <div>
+                <a href="index.php?action=admin/categorias/editar&id=<?= $category->id_categoria ?>">Editar</a>
+                |
+                <a href="index.php?action=admin/categorias/eliminar&id=<?= $category->id_categoria ?>">Eliminar</a>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<?php require './app/views/layout/footer.phtml'; ?>
